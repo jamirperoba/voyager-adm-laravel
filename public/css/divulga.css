@@ -1,0 +1,14 @@
+.entre-contato{
+	color: #fff;
+	padding-bottom: 2%;
+}
+.mensagem-retorno{
+	color: #fff;
+	margin-bottom: 2%;
+}
+.form-control{
+	color: #000;
+}
+::-webkit-input-placeholder {
+   color: #bbb6b6 !important;
+}

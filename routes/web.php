@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return redirect('admin');
-});
+Route::get('/', 'DivulgaController@index');
+Route::post('enviar','DivulgaController@enviar');
+// Route::get('/', function () {
+// 	return view('divulga');
+//     // return redirect('admin');
+// });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
