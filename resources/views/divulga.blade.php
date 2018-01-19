@@ -77,7 +77,7 @@
         </div>
       </div>
       <div class="row text-center">
-        {{-- @foreach( $servicos as $row)
+        @foreach( $service as $row)
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -86,7 +86,7 @@
           <h4 class="service-heading">{{ $row->title }}</h4>
           <p class="text-muted">{{ $row->description }}.</p>
         </div>
-      </tr> @endforeach  --}}
+      </tr> @endforeach 
     </div>
   </div>
 </section>
@@ -102,20 +102,22 @@
     <div class="row">
       <div class="col-lg-12">
         <ul class="timeline">
+          @foreach($about as $row)
           <li>
             <div class="timeline-image">
-              <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+              <img class="rounded-circle img-fluid" src="storage/{{$row->photo}}" alt="">
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>2016</h4>
-                <h4 class="subheading">Início</h4>
+                <h4>{{$row->year}}</h4>
+                <h4 class="subheading">{{$row->title}}</h4>
               </div>
               <div class="timeline-body">
-                <p class="text-muted">Este projeto teve seu inicio no ano 2016, como ideia de projeto de conlusão de curso. Tendo como objetivo desenvolver uma interface onde seja possivel manipular e gerenciar os objetos da residencia de pessoas com algum tipo de defiência, utilizando o dispositivo IOM para navegação na interface!</p>
+                <p class="text-muted">{{$row->description}}</p>
               </div>
             </div>
           </li>
+          @endforeach
           <li class="timeline-inverted">
             <div class="timeline-image">
               <h4>Faça parte
@@ -141,9 +143,9 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        {{-- @foreach( $desenvolvedores_models as $row)
+        @foreach( $developers as $row)
         <div class="team-member">
-          <img class="mx-auto rounded-circle" src="img/team/{{ $row->photo }}" alt="">
+          <img class="mx-auto rounded-circle" src="http://localhost/voyager-adm-laravel/public/storage/{{$row->photo}}" alt="">
           <h4>{{ $row->name }}</h4>
           <p class="text-muted">{{ $row->function }}</p>
           <ul class="list-inline social-buttons">
@@ -164,7 +166,7 @@
             </li>
           </ul>
         </div>
-        @endforeach --}}
+        @endforeach
       </div>
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
